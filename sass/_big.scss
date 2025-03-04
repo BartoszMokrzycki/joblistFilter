@@ -1,0 +1,47 @@
+@media (min-width: 966px) {
+	.job-section {
+		.company-logo {
+			bottom: 0;
+			height: 88px;
+			width: 88px;
+            margin-right: 2em;
+		}
+
+		.job-box {
+			&__data {
+				margin-top: 0em;
+			}
+
+			&__position {
+				padding-top: 0;
+				padding-bottom: 1em;
+			}
+		}
+	}
+
+	main {
+		hr {
+			display: none;
+		}
+
+		.job-box {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			&__data,
+			&__status {
+				font-size: 1.8rem;
+			}
+
+			&__position {
+				font-size: 2.2rem;
+			}
+
+			.left-panel {
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+}

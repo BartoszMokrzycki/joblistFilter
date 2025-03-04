@@ -1,0 +1,227 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1600px;
+  background-color: #eaeeee;
+  font-family: "League Spartan", sans-serif;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+nav {
+  height: 150px;
+  background-color: #5ca5a5;
+  position: relative;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-bar {
+  position: absolute;
+  min-height: 70px;
+  bottom: -20px;
+  width: 90%;
+  max-width: 1150px;
+  padding: 0.7em 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  color: #5ca5a5;
+  font-weight: 600;
+}
+.filter-bar.hidden {
+  opacity: 0;
+}
+.filter-bar .filter-box {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.filter-bar .filter__item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #eaeeee;
+  padding-left: 0.7em;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.filter-bar .filter__item .fa-xmark {
+  font-size: 2rem;
+  color: #fff;
+  background-color: #5ca5a5;
+  padding: 0.4em;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.filter-bar .filter__item .fa-xmark:hover {
+  background-color: #2b3939;
+}
+.filter-bar .clear-btn {
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+.filter-bar .clear-btn:hover {
+  text-decoration: underline;
+}
+
+.job-section {
+  padding: 2em;
+}
+.job-section .company-logo {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  bottom: 40px;
+}
+.job-section .job {
+  background-color: #fff;
+  border-radius: 8px;
+  margin-top: 2em;
+  overflow: auto;
+}
+.job-section .job.featured {
+  position: relative;
+}
+.job-section .job-box {
+  padding: 2em 3em;
+  margin: 2em 0;
+}
+.job-section .job-box__data {
+  display: flex;
+  font-weight: 600;
+  font-size: 1.6rem;
+  padding: 0.5em 0;
+  align-items: center;
+  margin-top: -2em;
+}
+.job-section .job-box__data--company {
+  color: #5ca5a5;
+  padding-right: 1em;
+}
+.job-section .job-box__data--new, .job-section .job-box__data--featured {
+  text-transform: uppercase;
+  padding: 0.5em 0.7em;
+  margin: 0em 0.5em;
+  border-radius: 16px;
+  color: #fff;
+}
+.job-section .job-box__data--new {
+  background-color: #5ca5a5;
+}
+.job-section .job-box__data--featured {
+  background-color: #2b3939;
+}
+.job-section .job-box__position {
+  font-weight: 600;
+  font-size: 1.8rem;
+  padding: 1em 0;
+  transition: color 0.3s ease;
+}
+.job-section .job-box__position:hover {
+  color: #5ca5a5;
+  cursor: pointer;
+}
+.job-section .job-box__status {
+  display: flex;
+  padding-bottom: 1em;
+  font-size: 1.6rem;
+  gap: 25px;
+  color: #7c8f8f;
+}
+.job-section .job-box__status p {
+  position: relative;
+}
+.job-section .job-box__status p::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: -15px;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: #7c8f8f;
+}
+.job-section .job-box__status p:nth-last-child(1)::before {
+  display: none;
+}
+.job-section .job-box hr {
+  margin-bottom: 2em;
+}
+.job-section .job-box__tools {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  gap: 20px;
+  color: #5ca5a5;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+.job-section .job-box__tools--tool {
+  padding: 0.5em;
+  border-radius: 6px;
+  background-color: #eaeeee;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+.job-section .job-box__tools--tool.active {
+  background-color: #2b3939;
+  color: #fff;
+}
+.job-section .job-box__tools--tool:hover {
+  background-color: #5ca5a5;
+  color: #eaeeee;
+}
+
+@media (min-width: 966px) {
+  .job-section .company-logo {
+    bottom: 0;
+    height: 88px;
+    width: 88px;
+    margin-right: 2em;
+  }
+  .job-section .job-box__data {
+    margin-top: 0em;
+  }
+  .job-section .job-box__position {
+    padding-top: 0;
+    padding-bottom: 1em;
+  }
+  main hr {
+    display: none;
+  }
+  main .job-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  main .job-box__data, main .job-box__status {
+    font-size: 1.8rem;
+  }
+  main .job-box__position {
+    font-size: 2.2rem;
+  }
+  main .job-box .left-panel {
+    display: flex;
+    align-items: center;
+  }
+}/*# sourceMappingURL=main.css.map */

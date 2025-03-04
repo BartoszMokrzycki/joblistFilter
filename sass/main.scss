@@ -1,0 +1,242 @@
+@use './colors' as *;
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+
+body {
+	margin: 0 auto;
+	max-width: 1600px;
+	background-color: $lightGreen;
+	font-family: 'League Spartan', sans-serif;
+}
+
+main {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+nav {
+	height: 150px;
+	background-color: $mainGreen;
+	position: relative;
+	padding: 2em;
+	display: flex;
+	justify-content: center;
+}
+
+.filter-bar {
+	&.hidden {
+		opacity: 0;
+	}
+
+	.filter-box {
+		display: flex;
+		gap: 20px;
+		flex-wrap: wrap;
+	}
+
+	position: absolute;
+	min-height: 70px;
+	bottom: -20px;
+	width: 90%;
+	max-width: 1150px;
+	padding: 0.7em 2em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fff;
+	border-radius: 8px;
+
+	font-size: 1.8rem;
+	color: $mainGreen;
+	font-weight: 600;
+
+	.filter__item {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		background-color: $lightGreen;
+		padding-left: 0.7em;
+		border-radius: 4px;
+		overflow: hidden;
+
+		.fa-xmark {
+			font-size: 2rem;
+			color: #fff;
+			background-color: $mainGreen;
+			padding: 0.4em;
+			cursor: pointer;
+			transition: background-color 0.3s, color 0.3s;
+
+			&:hover {
+				background-color: $darkGreenTxt;
+			}
+		}
+	}
+
+	.clear-btn {
+		letter-spacing: 1.5px;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.job-section {
+	padding: 2em;
+
+	.company-logo {
+		position: relative;
+		width: 64px;
+		height: 64px;
+		bottom: 40px;
+	}
+
+	.job {
+		background-color: #fff;
+		border-radius: 8px;
+		margin-top: 2em;
+
+		overflow: auto;
+
+		&.featured {
+			position: relative;
+
+			// &::before {
+			// 	content: '';
+			// 	position: absolute;
+			// 	left: 0px;
+			// 	width: 6px;
+			// 	height: 100%;
+			// 	background-color: $mainGreen;
+			// 	border-radius: 6px 0 0 8px;
+			// 	z-index: 10;
+			// }
+		}
+	}
+
+	.job-box {
+		padding: 2em 3em;
+		margin: 2em 0;
+
+		&__data {
+			display: flex;
+			font-weight: 600;
+			font-size: 1.6rem;
+			padding: 0.5em 0;
+			align-items: center;
+			margin-top: -2em;
+
+			&--company {
+				color: $mainGreen;
+				padding-right: 1em;
+			}
+
+			&--new,
+			&--featured {
+				text-transform: uppercase;
+				padding: 0.5em 0.7em;
+				margin: 0em 0.5em;
+				border-radius: 16px;
+				color: #fff;
+			}
+
+			&--new {
+				background-color: $mainGreen;
+			}
+
+			&--featured {
+				background-color: $darkGreenTxt;
+			}
+		}
+
+		&__position {
+			font-weight: 600;
+			font-size: 1.8rem;
+			padding: 1em 0;
+			transition: color 0.3s ease;
+
+			&:hover {
+				color: $mainGreen;
+				cursor: pointer;
+			}
+		}
+
+		&__status {
+			display: flex;
+			padding-bottom: 1em;
+			font-size: 1.6rem;
+			gap: 25px;
+			color: $dirtyLightGreen;
+
+			p {
+				position: relative;
+
+				&::before {
+					content: '';
+					position: absolute;
+					top: 5px;
+					right: -15px;
+					height: 5px;
+					width: 5px;
+					border-radius: 50%;
+					background-color: $dirtyLightGreen;
+				}
+
+				&:nth-last-child(1)::before {
+					display: none;
+				}
+			}
+		}
+
+		hr {
+			margin-bottom: 2em;
+		}
+
+		&__tools {
+			display: flex;
+			align-items: center;
+			font-size: 1.6rem;
+			gap: 20px;
+			color: $mainGreen;
+			font-weight: 600;
+			flex-wrap: wrap;
+
+			&--tool {
+				&.active {
+					background-color: $darkGreenTxt;
+					color: #fff;
+				}
+
+				padding: 0.5em;
+				border-radius: 6px;
+				background-color: $lightGreen;
+				transition: background-color 0.3s ease, color 0.3s ease;
+				cursor: pointer;
+
+				&:hover {
+					background-color: $mainGreen;
+					color: $lightGreen;
+				}
+			}
+		}
+	}
+}
+
+@import './small';
+@import './medium';
+@import './big';
+@import './large';
+@import './extraLarge';
